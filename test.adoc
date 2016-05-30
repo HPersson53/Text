@@ -37,7 +37,8 @@ CREATE
 	(Ma)-[:Is_included_in]->(Rb)
 	
 // Article
-CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
+CREATE  
+	(Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing", Pack_count:'14'})
 
 // Recepie Article
