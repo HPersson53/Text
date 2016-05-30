@@ -23,7 +23,7 @@ japp 2
 [source, cypher]
 ----
 CREATE 	(Ma:Material {Number:'3212400', Material_type:'Bag'}),
-	(Mb:Material {Number:'3654300', Material_type:'Bag'}),
+	(Mb:Material {Number:'3654300', Material_type:'Bag'})
 
 CREATE	(Ra:Recepie {Number:'1000005654.001', name:'Recepie 8821-12.001'}),
 	(Rb:Recepie {Number:'1000005654.002', name:'Recepie 8821-12.002'}),
