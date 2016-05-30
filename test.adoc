@@ -22,14 +22,16 @@ japp 2
 //setup
 [source, cypher]
 ----
-CREATE (Ma:Material {Number:'3212400', Material_type:'Bag'})
+CREATE 	(Ma:Material {Number:'3212400', Material_type:'Bag'}),
+	(Mb:Material {Number:'3654300', Material_type:'Bag'}),
 
 CREATE	(Ra:Recepie {Number:'1000005654.001', name:'Recepie 8821-12.001'}),
 	(Rb:Recepie {Number:'1000005654.002', name:'Recepie 8821-12.002'}),
 	(Rc:Recepie {Number:'1000006847.001', name:'Recepie 9426-12.001'})
 
 CREATE	(Ma)-[:Is_included_in]->(Ra),
-	(Ma)-[:Is_included_in]->(Rb)
+	(Ma)-[:Is_included_in]->(Rb),
+	(Mb)-[:Is_included_in]->(Rc)
 	
 CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14'})
