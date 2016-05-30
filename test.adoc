@@ -50,14 +50,15 @@ CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdh
 CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
 	(TT3)-[:translation_of]->(MT1)
-	
-CREATE	(MT1)-[:Is_included_on]->(Ma),
-	(MT2)-[:Is_included_on]->(Ma)
 
-CREATE	(MS1:Master_set {Design_Name:'Rainbow', Product_Size:'Normal Wing'})
+CREATE	(MS1:Master_set {Design_Name:'Rainbow', Product_Size:'Normal Wing'}),
+	(MS2:Master_set {Design_Name:'SWAT', Product_Size:'Normal Wing'})
 
 CREATE	(MT1)-[:Is_included_in]->(MS1),
 	(MT2)-[:Is_included_in]->(MS1)
+
+CREATE	(MT1)-[:Is_included_in]->(Ma),
+	(MT2)-[:Is_included_in]->(Ma)	
 
 ----
 
