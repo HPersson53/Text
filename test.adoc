@@ -49,8 +49,8 @@ CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
 	(TT3)-[:translation_of]->(MT1)
 	
-CREATE	(MT1)-[:Is included_on]->(Ma),
-	(MT2)-[:Is included_on]->(Ma)
+CREATE	(MT1)-[:Is_included_on]->(Ma),
+	(MT2)-[:Is_included_on]->(Ma)
 ----
 
 //graph
