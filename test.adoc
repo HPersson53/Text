@@ -22,18 +22,29 @@ japp 2
 //setup
 [source, cypher]
 ----
-// Create Material
+// Material
 CREATE (Ma:Material {Number:'3212400', Material_type:'Bag'})
 
-// Create Recepie
+// Recepie
 CREATE
-	(Ra:Recepie {Number:'1000005654.001', name:'name'}),
-	(Rb:Recepie {Number:'1000005654.002', name:'name'})
+	(Ra:Recepie {Number:'1000005654.001', name:'Recepie 8821-12.001'}),
+	(Rb:Recepie {Number:'1000005654.002', name:'Recepie 8821-12.002'}),
+	(Rc:Recepie {Number:'1000006847.001', name:'Recepie 9426-12.001'})
 
-// Create their relationships with the ATC national classifier
+// Material - Recepie
 CREATE
 	(Ma)-[:Is_included_in]->(Ra),
 	(Ma)-[:Is_included_in]->(Rb)
+	
+// Article
+CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing", Pack_count:'14'},
+	(Ab:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing", Pack_count:'14'})
+
+// Recepie -> Article
+CREATE
+	(Ra)-[:Is_included_in]->(Aa),
+	(Rb)-[:Is_included_in]->(Aa),
+	(Rc)-[:Is_included_in]->(Ab)
 
 ----
 
