@@ -31,7 +31,7 @@ CREATE
 	(Rb:Recepie {Number:'1000005654.002', name:'Recepie 8821-12.002'}),
 	(Rc:Recepie {Number:'1000006847.001', name:'Recepie 9426-12.001'})
 
-// Material Recepie
+// Material_Recepie
 CREATE
 	(Ma)-[:Is_included_in]->(Ra),
 	(Ma)-[:Is_included_in]->(Rb)
@@ -41,7 +41,7 @@ CREATE
 	(Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing", Pack_count:'14'})
 
-// Recepie Article
+// Recepie_Article
 CREATE
 	(Ra)-[:Is_included_in]->(Aa),
 	(Rb)-[:Is_included_in]->(Aa),
