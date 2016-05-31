@@ -122,7 +122,7 @@ This system has many use cases, for example:
 
 [source, cypher]
 ----
-MATCH (n:Activity)--(a:article)
+MATCH (n:Activity)--(a:Article)
 RETURN n,a
 ----
 
