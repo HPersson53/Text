@@ -5,14 +5,23 @@
 '''
 [[introduction]]
 == Introduction
-To get overview of Text and icon content
+To get overview of Text and icon content for artwork production
 
 '''
 [[model]]
 == Model
-japp 23
-.Primary Schema
-japp 2
+Graphdatabase with following Node classifications:
+
+Activity (SA2080 Rainbow)
+Material (3456701, Bag, Mondi)
+Article		(8112-02 Nana, Ultra, Normal wing, English, 14pcs x 10, UK)
+Recepie		(variant for keeping track of updates)
+Master Set	(grouping of articles for managing master text input, Normal Wing, Super Wing, Normal wing Deo)
+Master		(Master text)
+Translation	(Local translation of master text)
+Order data	(planned artwork approval, Prepress, Artwork agency, Notes)
+PCON		(Linedrawing, Supplier, pack type)
+
 
 '''
 [[setup]]
@@ -117,14 +126,7 @@ CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 //graphttt
 
 '''
-[[usecases]]
-== Use cases
-This system has many use cases, for example:
 
-* Find all the different bags
-
-'''
-[[query1]]
 === Activity initsiation
 Input from PLM ats Assignment approved, we know assortment and material specs change scope
 [source, cypher]
@@ -133,6 +135,11 @@ MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
 RETURN n,a,r,m,PCON
 ----
 //graph_result
+
+=== GDM requests address update.
+exsisting Address text objects are linked to the new articles/artworks??, following sold in list.
+Market can keep exsisting or create new version.
+Market can take away link and use another approved address text object.
 
 === GDM Adds Master text classifications and master text request.
 Master classification / grouping can be for Normal / Super / Normal deo etc..
