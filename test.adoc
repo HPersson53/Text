@@ -122,8 +122,8 @@ This system has many use cases, for example:
 
 [source, cypher]
 ----
-MATCH (n:Material)
-RETURN n.number AS `number`, n.Material_type AS `material_type`
+MATCH (n:Activity),(m:article)
+RETURN n, m
 ----
 
 //table
