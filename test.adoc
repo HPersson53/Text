@@ -51,8 +51,9 @@ CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
 	(TT3)-[:translation_of]->(MT1)
 
-CREATE	(MS1:Master_set {Design_Name:'Rainbow', Product_Size:'Normal Wing'}),
-	(MS2:Master_set {Design_Name:'SWAT', Product_Size:'Normal Wing'})
+CREATE	(MS1:Master_set {Design_Name:'Rainbow NW', Product_Size:'Normal Wing'}),
+	(MS2:Master_set {Design_Name:'SWAT NW', Product_Size:'Normal Wing'}),
+	(MS3:Master_set {Design_Name:'Rainbow NW Deo', Product_Size:'Normal Wing', Addetive:'Deo'})
 
 CREATE	(MT1)-[:Is_included_in]->(MS1),
 	(MT2)-[:Is_included_in]->(MS1),
@@ -60,6 +61,10 @@ CREATE	(MT1)-[:Is_included_in]->(MS1),
 
 CREATE	(MS1)-[:Is_included_in]->(Ma),
 	(MS1)-[:Is_included_in]->(Ma)
+
+CREATE	(TT1)-[:Used_in_artwork]->(Ma),
+	(TT2)-[:translation_of]->(Ma),
+	(TT3)-[:translation_of]->(Mb)
 
 ----
 
