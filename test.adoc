@@ -60,7 +60,7 @@ CREATE	(MS1:Master_set {Design_Name:'Rainbow NW', Product_Size:'Normal Wing'}),
 CREATE	(Aa)-[:Is_included_in]->(MS1),
 	(Aa)-[:Is_included_in]->(MS1),
 	(Ac)-[:Is_included_in]->(MS1),
-	(Ad)-[:Is_included_in]->(MS2)
+	(Aa)-[:Is_included_in]->(MS2)
 
 CREATE	(MS1)-[:Is_included_in]->(Ma),
 	(MS1)-[:Is_included_in]->(Mb)
