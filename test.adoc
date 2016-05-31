@@ -131,8 +131,8 @@ RETURN n,a,r,m,PCON
 If GHC needs to give master text GDM creates a group with mastertexts. grouping can be for Normal / Super / Normal deo etc..
 [source, cypher]
 ----
-MATCH (n:Activity)--(a:Article)--(ms:Master_set)--(mt:Master_text)
-RETURN n,a,ms
+MATCH (n:Activity)--(a:Article)--(ms:Master_set)--(mt:Master)
+RETURN n,a,ms,mt
 ----
 //graph_result
 '''
