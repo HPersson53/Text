@@ -34,7 +34,7 @@ CREATE	(Ma)-[:Is_included_in]->(Ra),
 	(Mb)-[:Is_included_in]->(Rc)
 	
 CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
-	(Ab:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Addetive:"Deo", Pack_count:'14'}),
+	(Ab:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Addetive:'Deo', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14'}),
 
 
