@@ -10,7 +10,7 @@ To get overview of Text and icon content
 '''
 [[model]]
 == Model
-japp
+japp 2
 .Primary Schema
 japp 2
 
