@@ -23,14 +23,15 @@ japp 2
 [source, cypher]
 ----
 CREATE	(Ma:Material {Number:'3212400', Material_type:'Bag'}),
-	(Mb:Material {Number:'3654300', Material_type:'Bag'})
+	(Mb:Material {Number:'3654300', Material_type:'Bag'}),
+	(Mc:Material {Number:'3467200', Material_type:'Bag'})
 
 CREATE	(Ra:Recepie {Number:'1000005654.001', name:'Recepie 8821-12.001'}),
 	(Rb:Recepie {Number:'1000005654.002', name:'Recepie 8821-12.002'}),
 	(Rc:Recepie {Number:'1000006847.001', name:'Recepie 9426-12.001'})
 
 CREATE	(Ma)-[:Is_included_in]->(Ra),
-	(Ma)-[:Is_included_in]->(Rb),
+	(Mc)-[:Is_included_in]->(Rb),
 	(Mb)-[:Is_included_in]->(Rc)
 	
 CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
@@ -46,13 +47,19 @@ CREATE	(MT1:Master {Position:'Bulletpoint 1', master_text:'Shaped front and back
 	(MT3:Master {Position:'ICON 032', master_text:'Dont flush icon'}),
 	(MT4:Master {Position:'Bulletpoint 2', master_text:'Now enven better'})
 
-CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdhksb shfjh ', Language:'FR'}),
-	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'translation sdfj sfdh jh s ', Language:'FR'}),
-	(TT3:onpack {Position:'Bulletpoint 1', Translated_text:'translation sfh jhsjhj hjsf ', Language:'UK'})
+CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdhksb shfjh', Language:'FR'}),
+	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'translation sdfj sfdh jh s', Language:'FR'}),
+	(TT3:onpack {Position:'Bulletpoint 1', Translated_text:'translation sfh jhsjhj hjsf', Language:'UK'}),
+	(TT3:onpack {Position:'Bulletpoint 2', Translated_text:'translation dsfsf fsf fss', Language:'UK'})
 	
 CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
-	(TT3)-[:translation_of]->(MT1)
+	(TT3)-[:translation_of]->(MT1),
+	(TT4)-[:translation_of]->(MT2)
+	
+CREATE 	(MT3)-[:Is_used_in]->(Ma),
+	(MT3)-[:Is_used_in]->(Mb),
+	(MT3)-[:Is_used_in]->(Mc)
 
 CREATE	(MS1:Master_set {Design_Name:'Rainbow NW', Product_Size:'Normal Wing'}),
 	(MS2:Master_set {Design_Name:'SWAT NW', Product_Size:'Normal Wing'})
@@ -63,7 +70,8 @@ CREATE	(Aa)-[:Is_included_in]->(MS1),
 	(Aa)-[:Is_included_in]->(MS2)
 
 CREATE	(MS1)-[:Is_included_in]->(Ma),
-	(MS1)-[:Is_included_in]->(Mb)
+	(MS1)-[:Is_included_in]->(Mb),
+	(MS2)-[:Is_included_in]->(Mc)
 	
 CREATE	(MS1)-[:Is_included_in]->(MT1),
 	(MS1)-[:Is_included_in]->(MT2),
@@ -81,7 +89,8 @@ CREATE	(QPAC1:QPAC {Number:'10000035483', Supplier:'Mondi HU'})
 CREATE	(QPAC1)-[:Material_used_in]->(PCON1)
 	
 CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
-	(PCON1)-[:Drawing_used_for]->(Mb)
+	(PCON1)-[:Drawing_used_for]->(Mb),
+	(PCON1)-[:Drawing_used_for]->(Mc)
 
 ----
 
