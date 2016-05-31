@@ -45,17 +45,19 @@ CREATE	(Ra)-[:Is_included_in]->(Aa),
 CREATE	(MT1:Master {Position:'Bulletpoint 1', master_text:'Shaped front and back to fit your curves'}),
 	(MT2:Master {Position:'Bulletpoint 2', master_text:'All-around barrier'}),
 	(MT3:Master {Position:'ICON 032', master_text:'Dont flush icon'}),
-	(MT4:Master {Position:'Bulletpoint 2', master_text:'Now enven better'})
+	(MT4:Master {Position:'Bulletpoint 2', master_text:'Now enven better SWAT'})
 
 CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdhksb shfjh', Language:'FR'}),
 	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'translation sdfj sfdh jh s', Language:'FR'}),
 	(TT3:onpack {Position:'Bulletpoint 1', Translated_text:'translation sfh jhsjhj hjsf', Language:'UK'}),
-	(TT4:onpack {Position:'Bulletpoint 2', Translated_text:'translation dsfsf fsf fss', Language:'UK'})
+	(TT4:onpack {Position:'Bulletpoint 2', Translated_text:'translation dsfsf fsf fss', Language:'UK'}),
+	(TT4:onpack {Position:'Bulletpoint 2', Translated_text:'translation swat, Language:'UK'})
 	
 CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
 	(TT3)-[:translation_of]->(MT1),
-	(TT4)-[:translation_of]->(MT2)
+	(TT4)-[:translation_of]->(MT2),
+	(TT5)-[:translation_of]->(MT4)
 	
 CREATE 	(MT3)-[:Is_used_in]->(Ma),
 	(MT3)-[:Is_used_in]->(Mb),
@@ -81,6 +83,7 @@ CREATE	(MS1)-[:Is_included_in]->(MT1),
 CREATE	(TT1)-[:Used_in_artwork]->(Ma),
 	(TT2)-[:translation_of]->(Ma),
 	(TT3)-[:translation_of]->(Mb)
+	(TT4)-[:translation_of]->(Mc)
 
 CREATE	(PCON1:PCON {Number:'10000078787', Product_Size:'Normal Wing', Adim:'190', Bdim:'120', Cdim:'32'})
 	
