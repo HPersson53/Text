@@ -118,11 +118,12 @@ This system has many use cases, for example:
 
 '''
 [[query1]]
-=== Find all Activities with connected Articles.
+=== Activity initsiation
+Activity, articles connected, recepie variant, material no, pcon
 [source, cypher]
 ----
-MATCH (n:Activity)--(a:Article)
-RETURN n,a
+MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
+RETURN n,a,r,m,PCON
 ----
 //graph_result
 
