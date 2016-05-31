@@ -130,6 +130,7 @@ RETURN n,a,r,m,PCON
 === GDM Adds Master text classifications and master text request.
 Master classification / grouping can be for Normal / Super / Normal deo etc..
 Master text object / request is added to each classification. GHC to update.
+If master text has been send out for translation, then new master text version is needed for further updates.
 If same Master text is used in two classification, same object is linked to both.
 [source, cypher]
 ----
@@ -143,12 +144,23 @@ When Master text is approved,
 gdm sends out request for translation dependent on Basket input.
 Translation objects are added to master text object.
 Translation object is linked directly to all artworks that is linked to master classification.
+If a translated text has been used in a artwork revision, then next changes creates a new text revision.
 FIX!! Special promotion texts can be requested directly towards an artwork, without using classification
-FIX!! query showing 
+
 [source, cypher]
 ----
 MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)
 RETURN a,ms,mt,tt
+----
+//graph_result
+
+=== GDM Links translations to artwork
+Translation object is linked directly to artwork.
+
+[source, cypher]
+----
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)--(m:Material)
+RETURN ms,mt,tt,m
 ----
 //graph_result
 '''
