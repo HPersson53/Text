@@ -127,12 +127,23 @@ RETURN n,a,r,m,PCON
 ----
 //graph_result
 
-=== GDM Adds Master text classifications
-If GHC needs to give master text GDM creates a group with mastertexts. grouping can be for Normal / Super / Normal deo etc..
+=== GDM Adds Master text classifications and master text request.
+Master classification / grouping can be for Normal / Super / Normal deo etc..
+Master text object / request is added to each classification. GHC to update.
+If same Master text is used in two classification, same object is linked to both.
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(ms:Master_set)--(mt:Master)
 RETURN n,a,ms,mt
+----
+//graph_result
+
+=== GDM Initsiates Local translations
+When Master text is approved, gdm sends out request for translation dependent on Basket input.
+[source, cypher]
+----
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)
+RETURN a,ms,mt,tt
 ----
 //graph_result
 '''
