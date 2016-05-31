@@ -147,8 +147,8 @@ FIX!! Special promotion texts can be requested directly towards an artwork, with
 FIX!! query showing 
 [source, cypher]
 ----
-MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)--(m:Material)
-RETURN a,ms,mt,tt,m
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)
+RETURN a,ms,mt,tt
 ----
 //graph_result
 '''
