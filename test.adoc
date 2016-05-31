@@ -34,7 +34,6 @@ CREATE	(Ma)-[:Is_included_in]->(Ra),
 	(Mb)-[:Is_included_in]->(Rc)
 	
 CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
-	(Ad:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Addetive:'Deo', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14'})
 
 
@@ -44,7 +43,8 @@ CREATE	(Ra)-[:Is_included_in]->(Aa),
 	
 CREATE	(MT1:Master {Position:'Bulletpoint 1', master_text:'Shaped front and back to fit your curves'}),
 	(MT2:Master {Position:'Bulletpoint 2', master_text:'All-around barrier'}),
-	(MT3:Master {Position:'ICON 032', master_text:'Dont flush icon'})
+	(MT3:Master {Position:'ICON 032', master_text:'Dont flush icon'}),
+	(MT4:Master {Position:'Bulletpoint 2', master_text:'Now enven better'})
 
 CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdhksb shfjh ', Language:'FR'}),
 	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'translation sdfj sfdh jh s ', Language:'FR'}),
@@ -55,20 +55,20 @@ CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT3)-[:translation_of]->(MT1)
 
 CREATE	(MS1:Master_set {Design_Name:'Rainbow NW', Product_Size:'Normal Wing'}),
-	(MS2:Master_set {Design_Name:'SWAT NW', Product_Size:'Normal Wing'}),
-	(MS3:Master_set {Design_Name:'Rainbow NW Deo', Product_Size:'Normal Wing', Addetive:'Deo'})
+	(MS2:Master_set {Design_Name:'SWAT NW', Product_Size:'Normal Wing'})
 
 CREATE	(Aa)-[:Is_included_in]->(MS1),
 	(Aa)-[:Is_included_in]->(MS1),
 	(Ac)-[:Is_included_in]->(MS1),
-	(Ad)-[:Is_included_in]->(MS3)
+	(Ad)-[:Is_included_in]->(MS2)
 
 CREATE	(MS1)-[:Is_included_in]->(Ma),
-	(MS1)-[:Is_included_in]->(Ma)
+	(MS1)-[:Is_included_in]->(Mb)
 	
 CREATE	(MS1)-[:Is_included_in]->(MT1),
 	(MS1)-[:Is_included_in]->(MT2),
-	(MS1)-[:Is_included_in]->(MT3)
+	(MS1)-[:Is_included_in]->(MT3),
+	(MS2)-[:Is_included_in]->(MT4)
 
 CREATE	(TT1)-[:Used_in_artwork]->(Ma),
 	(TT2)-[:translation_of]->(Ma),
