@@ -126,7 +126,7 @@ MATCH (n:Activity)--(a:Article)
 RETURN n,a
 ----
 
-//table
+//graph_result
 
 '''
 
