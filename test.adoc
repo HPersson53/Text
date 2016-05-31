@@ -22,6 +22,9 @@ japp 2
 //setup
 [source, cypher]
 ----
+CREATE	(PR1:Activity {Number:'SA2880 SWAT', Description:'SWAT'}),
+	(PR2:Activity {Number:'SA3012 Rainbow', Description:'Rainbow'})
+
 CREATE	(Ma:Material {Number:'3212400', Material_type:'Bag Li Rainb'}),
 	(Mb:Material {Number:'3654300', Material_type:'Bag Nana Rainb'}),
 	(Mc:Material {Number:'3467200', Material_type:'Bag Li SWAT'})
@@ -36,7 +39,9 @@ CREATE	(Ma)-[:Is_included_in]->(Ra),
 	
 CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14'})
-
+	
+CREATE	(Aa)-[:Is_included_in]->(PR2),
+	(Ac)-[:Is_included_in]->(PR2)
 
 CREATE	(Ra)-[:Is_included_in]->(Aa),
 	(Rb)-[:Is_included_in]->(Aa),
@@ -85,12 +90,16 @@ CREATE	(TT1)-[:Used_in_artwork]->(Mb),
 	(TT3)-[:translation_of]->(Ma),
 	(TT4)-[:translation_of]->(Ma),
 	(TT5)-[:translation_of]->(Mc)
+	
+CREATE	(Oa:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'}),
+	(Ob:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'}),
+	(Oc:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'})
+	
+CREATE	(Ma)-[:has]->(Oa),
+	(Mb)-[:has]->(Ob),
+	(Mc)-[:has]->(Oc)
 
 CREATE	(PCON1:PCON {Number:'10000078787', Product_Size:'Normal Wing', Adim:'190', Bdim:'120', Cdim:'32'})
-	
-CREATE	(QPAC1:QPAC {Number:'10000035483', Supplier:'Mondi HU'})
-
-CREATE	(QPAC1)-[:Material_used_in]->(PCON1)
 	
 CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 	(PCON1)-[:Drawing_used_for]->(Mb),
