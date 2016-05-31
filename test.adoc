@@ -139,7 +139,15 @@ RETURN n,a,r,m,PCON
 exsisting Address text objects are linked to the new articles/artworks??, following sold in list.
 Market can keep exsisting or create new version.
 Market can take away link and use another approved address text object.
-...
+
+=== GDM initsiate Leagal icons
+GDM links icons to artworks, for review at markets.
+We use label classification guide + present setup
+
+=== Local market contacts
+List of who is text translator, who is artwork approver at local market.
+Local market or reginal manager shuld update.
+
 === GDM Adds Master text classifications and master text request.
 Master classification / grouping can be for Normal / Super / Normal deo etc..
 Master text object / request is added to each classification. GHC to update.
