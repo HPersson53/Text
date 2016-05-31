@@ -34,7 +34,7 @@ CREATE	(Ma)-[:Is_included_in]->(Ra),
 	(Mb)-[:Is_included_in]->(Rc)
 	
 CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
-	(Ab:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Addetive:'Deo', Pack_count:'14'}),
+	(Ad:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Addetive:'Deo', Pack_count:'14'}),
 	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14'}),
 
 
@@ -60,7 +60,7 @@ CREATE	(MS1:Master_set {Design_Name:'Rainbow NW', Product_Size:'Normal Wing'}),
 CREATE	(Aa)-[:Is_included_in]->(MS1),
 	(Aa)-[:Is_included_in]->(MS1),
 	(Ac)-[:Is_included_in]->(MS1),
-	(Ab)-[:Is_included_in]->(MS3)
+	(Ad)-[:Is_included_in]->(MS3)
 
 CREATE	(MS1)-[:Is_included_in]->(Ma),
 	(MS1)-[:Is_included_in]->(Ma)
