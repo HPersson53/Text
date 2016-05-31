@@ -119,7 +119,7 @@ This system has many use cases, for example:
 '''
 [[query1]]
 === Activity initsiation
-Activity, articles connected, recepie variant, material no, pcon
+Input from PLM ats Assignment approved, we know assortment and material specs change scope
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
@@ -127,11 +127,12 @@ RETURN n,a,r,m,PCON
 ----
 //graph_result
 
-=== Find all Articles with connected items
+=== GDM Adds Master text classifications
+If GHC needs to give master text GDM creates a group with mastertexts. grouping can be for Normal / Super / Normal deo etc..
 [source, cypher]
 ----
-MATCH (a:Article)--(n)
-RETURN a,n
+MATCH (n:Activity)--(a:Article)--(ms:Master_set)--(mt:Master_text)
+RETURN n,a,ms
 ----
 //graph_result
 '''
