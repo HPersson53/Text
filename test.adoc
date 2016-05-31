@@ -22,9 +22,9 @@ japp 2
 //setup
 [source, cypher]
 ----
-CREATE	(Ma:Material {Number:'3212400', Material_type:'Bag'}),
-	(Mb:Material {Number:'3654300', Material_type:'Bag'}),
-	(Mc:Material {Number:'3467200', Material_type:'Bag'})
+CREATE	(Ma:Material {Number:'3212400', Material_type:'Bag Li Rainb'}),
+	(Mb:Material {Number:'3654300', Material_type:'Bag Nana Rainb'}),
+	(Mc:Material {Number:'3467200', Material_type:'Bag Li SWAT'})
 
 CREATE	(Ra:Recepie {Number:'1000005654.001', name:'Recepie 8821-12.001'}),
 	(Rb:Recepie {Number:'1000005654.002', name:'Recepie 8821-12.002'}),
@@ -80,10 +80,10 @@ CREATE	(MS1)-[:Is_included_in]->(MT1),
 	(MS1)-[:Is_included_in]->(MT3),
 	(MS2)-[:Is_included_in]->(MT4)
 
-CREATE	(TT1)-[:Used_in_artwork]->(Ma),
-	(TT2)-[:translation_of]->(Ma),
-	(TT3)-[:translation_of]->(Mb),
-	(TT4)-[:translation_of]->(Mb),
+CREATE	(TT1)-[:Used_in_artwork]->(Mb),
+	(TT2)-[:translation_of]->(Mb),
+	(TT3)-[:translation_of]->(Ma),
+	(TT4)-[:translation_of]->(Ma),
 	(TT5)-[:translation_of]->(Mc)
 
 CREATE	(PCON1:PCON {Number:'10000078787', Product_Size:'Normal Wing', Adim:'190', Bdim:'120', Cdim:'32'})
