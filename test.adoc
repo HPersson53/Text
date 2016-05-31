@@ -129,8 +129,8 @@ RETURN n,a
 === Find all Articles with connected items
 [source, cypher]
 ----
-MATCH (a:Article)--(n:)
-RETURN n,a
+MATCH (a:Article)--(n)
+RETURN a,n
 ----
 //graph_result
 '''
