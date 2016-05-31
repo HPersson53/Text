@@ -125,7 +125,6 @@ CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 
 //graph
 
-'''
 === Activity initsiation
 Input from PLM ats Assignment approved, we know assortment and material specs change scope
 [source, cypher]
@@ -134,7 +133,7 @@ MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
 RETURN n,a,r,m,PCON
 ----
 //graph_result
-...
+
 === GDM requests address update.
 exsisting Address text objects are linked to the new articles/artworks??, following sold in list.
 Market can keep exsisting or create new version.
@@ -156,7 +155,7 @@ RETURN n,a,ms,mt
 ----
 //graph_result
 ...
-=== GDM Initsiates Local translations
+[[GDM Initsiates Local translations]]
 When Master text is approved, 
 gdm sends out request for translation dependent on Basket input.
 Translation objects are added to master text object.
