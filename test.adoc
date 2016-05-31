@@ -154,8 +154,8 @@ MATCH (n:Activity)--(a:Article)--(ms:Master_set)--(mt:Master)
 RETURN n,a,ms,mt
 ----
 //graph_result
-...
-[[GDM Initsiates Local translations]]
+
+=== GDM Initsiates Local translations
 When Master text is approved, 
 gdm sends out request for translation dependent on Basket input.
 Translation objects are added to master text object.
