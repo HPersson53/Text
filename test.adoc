@@ -51,7 +51,7 @@ CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdh
 	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'translation sdfj sfdh jh s', Language:'FR'}),
 	(TT3:onpack {Position:'Bulletpoint 1', Translated_text:'translation sfh jhsjhj hjsf', Language:'UK'}),
 	(TT4:onpack {Position:'Bulletpoint 2', Translated_text:'translation dsfsf fsf fss', Language:'UK'}),
-	(TT5:onpack {Position:'Bulletpoint 2', Translated_text:'translation swat, Language:'UK'})
+	(TT5:onpack {Position:'Bulletpoint 2', Translated_text:'translation swat', Language:'UK'})
 	
 CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
