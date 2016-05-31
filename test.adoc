@@ -118,15 +118,20 @@ This system has many use cases, for example:
 
 '''
 [[query1]]
-=== Find all the different materials
-
+=== Find all Activities with connected Articles.
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)
 RETURN n,a
 ----
-
 //graph_result
 
+=== Find all Articles with connected items
+[source, cypher]
+----
+MATCH (a:Article)--(n:)
+RETURN n,a
+----
+//graph_result
 '''
 
