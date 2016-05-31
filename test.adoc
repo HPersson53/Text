@@ -122,8 +122,8 @@ This system has many use cases, for example:
 
 [source, cypher]
 ----
-MATCH (n:Activity)
-RETURN n
+MATCH (n:Activity)--(a:article)
+RETURN n,a
 ----
 
 //table
