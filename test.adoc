@@ -139,11 +139,15 @@ RETURN n,a,ms,mt
 //graph_result
 
 === GDM Initsiates Local translations
-When Master text is approved, gdm sends out request for translation dependent on Basket input.
+When Master text is approved, 
+gdm sends out request for translation dependent on Basket input.
+Translation objects are added to master text object.
+Translation object is linked directly to all artworks that is linked to master classification.
+(Special promotion texts can be requested directly towards an artwork, without using classification)
 [source, cypher]
 ----
-MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)
-RETURN a,ms,mt,tt
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack)--(a2:Article)
+RETURN a,ms,mt,tt,a2
 ----
 //graph_result
 '''
