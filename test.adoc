@@ -79,9 +79,9 @@ CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT7)-[:translation_of]->(MT5),
 	(TT8)-[:translation_of]->(MT2)
 	
-CREATE 	(MT3)-[:Is_used_in]->(Ma),
-	(MT3)-[:Is_used_in]->(Mb),
-	(MT3)-[:Is_used_in]->(Mc)
+CREATE 	(MT3)-[:Content_for]->(Ma),
+	(MT3)-[:Content_for]->(Mb),
+	(MT3)-[:Content_for]->(Mc)
 	
 CREATE 	(TT2)-[:Is_replaced_by]->(TT8)
 
