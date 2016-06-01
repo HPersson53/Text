@@ -139,11 +139,15 @@ CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 
 [[Wanted end result]]
 === Wanted end result
-For each Material:
-Text and icon objects that shuld be included in artwork.
-Order data, who is artwork agency, who is prepress, timings.
-PCON Linedrawing to be used
-PCON Supplier
+For each Material, order data for artwork agency:
+-Text and icon objects that shuld be included in artwork.
+-Order data, who is artwork agency, who is prepress, timings.
+-PCON / Linedrawing to be used
+-PCON Supplier
+
+=== Text or icon update / replacment
+If translation or icon is changed new object is created and relinked to same artworks as original text object
+
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3654300'})--(tt:onpack)
@@ -153,6 +157,7 @@ MATCH (m)--(o:Order_data)
 RETURN n,a,r,m,tt,ms,PCON,o
 ----
 //graph_result
+
 
 [[Activity Initsiation]]
 === Activity initsiation
