@@ -166,6 +166,15 @@ RETURN n,a,r,m,tt,ms,PCON,o
 ----
 //graph_result
 
+[source, cypher]
+----
+MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3654300'})--(tt:onpack)
+MATCH (m)--(ms:Master)
+MATCH (m)--(PCON:PCON)
+MATCH (m)--(o:Order_data)
+RETURN n,a,r,m,tt,ms,PCON,o
+----
+//graph_result
 
 [[Activity Initsiation]]
 === Activity initsiation
@@ -173,9 +182,9 @@ Input from PLM ats Assignment approved, we know assortment and material specs ch
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
-RETURN n,a,r,m,PCON
+RETURN n.number,a.number, a.brand, a.size, a.basket,m.number,PCON.number
 ----
-//graph_result
+//Tabel
 
 === GDM requests address update.
 exsisting Address text objects are linked to the new articles/artworks??, following sold in list.
