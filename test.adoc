@@ -45,9 +45,9 @@ CREATE	(Ma)-[:Is_included_in]->(Ra),
 	(Mc)-[:Is_included_in]->(Rb),
 	(Mb)-[:Is_included_in]->(Rc)
 	
-CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14'}),
-	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14'}),
-	(Ad:Article {Number:'7564-12', Brand:'Nana', Size:'Goodnight Wing', Pack_count:'10'})
+CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pack_count:'14', Basket:'Eng'}),
+	(Ac:Article {Number:'9426-12', Brand:'Nana', Size:'Normal Wing', Pack_count:'14', Basket:'FR'}),
+	(Ad:Article {Number:'7564-12', Brand:'Nana', Size:'Goodnight Wing', Pack_count:'10', Basket:'FR'})
 	
 CREATE	(Aa)-[:Is_included_in]->(PR2),
 	(Ac)-[:Is_included_in]->(PR2),
@@ -218,7 +218,7 @@ FIX!! Icons syns ej i match så kan any användas eller hur det var.
 
 [source, cypher]
 ----
-MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(ms:Master_set)--(mt:Master)--(tt:onpack {Language:'FR'})
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article {Basket:'FR'})--(ms:Master_set)--(mt:Master)--(tt:onpack)
 RETURN a,ms,mt,tt
 ----
 //graph_result
