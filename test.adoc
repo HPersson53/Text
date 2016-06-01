@@ -138,7 +138,7 @@ PCON Linedrawing to be used
 PCON Supplier
 [source, cypher]
 ----
-MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3212400'})--(tt:onpack)
+MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3654300'})--(tt:onpack)
 MATCH (m)--(ms:Master)
 MATCH (m)--(PCON:PCON)
 MATCH (m)--(o:Order_data)
