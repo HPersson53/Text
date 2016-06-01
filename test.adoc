@@ -111,9 +111,9 @@ CREATE	(Oa:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Colla
 	(Ob:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'}),
 	(Oc:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'})
 	
-CREATE	(Ma)-[:has]->(Oa),
-	(Mb)-[:has]->(Ob),
-	(Mc)-[:has]->(Oc)
+CREATE	(Ma)<-[:Order_of]-(Oa),
+	(Mb)<-[:Order_of]-(Ob),
+	(Mc)<-[:Order_of]-(Oc)
 
 CREATE	(PCON1:PCON {Number:'10000078787', Product_Size:'Normal Wing', Adim:'190', Bdim:'120', Cdim:'32'})
 	
@@ -122,7 +122,7 @@ CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 	(PCON1)-[:Drawing_used_for]->(Mc)
 
 ----
-
+...
 //graph
 
 [[Wanted end result]]
@@ -141,7 +141,7 @@ MATCH (m)--(o:Order_data)
 RETURN n,a,r,m,tt,ms,PCON,o
 ----
 //graph_result
-...
+
 [[Activity Initsiation]]
 === Activity initsiation
 Input from PLM ats Assignment approved, we know assortment and material specs change scope
