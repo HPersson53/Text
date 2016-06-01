@@ -221,10 +221,10 @@ MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article {Basket:'FR'})--(ms:Mas
 RETURN a,ms,mt,tt
 ----
 //graph_result
-Looking at French translation set
+Looking at French translation set for Normal wing
 [source, cypher]
 ----
-MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article {Basket:'FR'})--(ms:Master_set {Design_Name:'Rainbow NW'})--(mt:Master)--(tt:onpack {Language:'FR')
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article {Basket:'FR'})--(ms:Master_set {Design_Name:'Rainbow NW'})--(mt:Master)--(tt:onpack {Language:'FR'})
 RETURN a,ms,mt,tt
 ----
 //graph_result
