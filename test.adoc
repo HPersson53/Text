@@ -166,19 +166,9 @@ RETURN n,a,r,m,tt,ms,PCON,o
 ----
 //graph_result
 
-[source, cypher]
-----
-MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3654300'})--(tt:onpack)
-MATCH (m)--(ms:Master)
-MATCH (m)--(PCON:PCON)
-MATCH (m)--(o:Order_data)
-RETURN n,a,r,m,tt,ms,PCON,o
-----
-//graph_result
-
 [[Activity Initsiation]]
 === Activity initsiation
-Input from PLM ats Assignment approved, we know assortment and material specs change scope
+Input from PLM at Assignment approved, we know assortment and what material specs to create
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
@@ -228,6 +218,13 @@ FIX!! Icons syns ej i match så kan any användas eller hur det var.
 [source, cypher]
 ----
 MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article {Basket:'FR'})--(ms:Master_set)--(mt:Master)--(tt:onpack)
+RETURN a,ms,mt,tt
+----
+//graph_result
+
+[source, cypher]
+----
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article {Basket:'FR'})--(ms:Master_set {Design_Name:'Rainbow NW'})--(mt:Master)--(tt:onpack)
 RETURN a,ms,mt,tt
 ----
 //graph_result
