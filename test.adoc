@@ -100,12 +100,12 @@ CREATE	(MS1)-[:Is_included_in]->(MT1),
 	(MS2)-[:Is_included_in]->(MT4)
 
 CREATE	(TT1)-[:Content_for]->(Mb),
-	(TT2)-[::Content_for]->(Mb),
-	(TT3)-[::Content_for]->(Ma),
-	(TT4)-[::Content_for]->(Ma),
-	(TT5)-[::Content_for]->(Mc),
-	(TT6)-[::Content_for]->(Ma),
-	(TT7)-[::Content_for]->(Mb)
+	(TT2)-[:Content_for]->(Mb),
+	(TT3)-[:Content_for]->(Ma),
+	(TT4)-[:Content_for]->(Ma),
+	(TT5)-[:Content_for]->(Mc),
+	(TT6)-[:Content_for]->(Ma),
+	(TT7)-[:Content_for]->(Mb)
 	
 CREATE	(Oa:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'}),
 	(Ob:Order_data {Planned_Approval_date:'2016-08-12', Artwork_Agency:'Collabra'}),
