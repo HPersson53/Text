@@ -182,7 +182,7 @@ Input from PLM ats Assignment approved, we know assortment and material specs ch
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
-RETURN n.number as 'SA no',a.number as 'Art no', a.brand as 'brand', a.size as 'size', a.basket as 'basket',m.number as 'Mat no',PCON.number as 'PCON'
+RETURN n.number as SA_no,a.number as Art_no, a.brand as brand, a.size as size, a.basket as basket, m.number as Mat_no, PCON.number as PCON
 ----
 //Table
 
