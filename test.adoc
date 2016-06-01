@@ -136,7 +136,8 @@ Material no
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3212400'})--(tt:onpack)
 MATCH (m)--(PCON:PCON)
-RETURN n,a,r,m,tt,PCON
+MATCH (m)--(ms:Master_set)
+RETURN n,a,r,m,tt,PCON,ms
 ----
 //graph_result
 ...
