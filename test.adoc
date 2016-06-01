@@ -6,7 +6,7 @@
 [[introduction]]
 == Introduction
 To get overview of Text and icon content for artwork production
-
+...
 [[model]]
 == Model
 Graphdatabase with following Node classifications:
