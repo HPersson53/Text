@@ -125,6 +125,20 @@ CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 
 //graph
 ...
+[[Wanted end result]]
+=== Wanted end result
+List of text and icon objects that shuld be included in artwork.
+Order data, who is artwork agency, who is prepress, timings.
+PCON Linedrawing to be used
+PCON Supplier
+Material no
+[source, cypher]
+----
+MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(r:Recepie)--(m:Material)--(tt:onpack)
+RETURN a,r,m,tt
+----
+//graph_result
+...
 [[Activity Initsiation]]
 === Activity initsiation
 Input from PLM ats Assignment approved, we know assortment and material specs change scope
