@@ -124,14 +124,14 @@ CREATE	(PCON1)-[:Drawing_used_for]->(Ma),
 ----
 
 //graph
-...
+
 [[Wanted end result]]
 === Wanted end result
-List of text and icon objects that shuld be included in artwork.
+For each Material:
+Text and icon objects that shuld be included in artwork.
 Order data, who is artwork agency, who is prepress, timings.
 PCON Linedrawing to be used
 PCON Supplier
-Material no
 [source, cypher]
 ----
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3212400'})--(tt:onpack)
