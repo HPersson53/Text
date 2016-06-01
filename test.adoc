@@ -52,9 +52,9 @@ CREATE  (Aa:Article {Number:'8821-12', Brand:'Libresse', Size:'Normal Wing', Pac
 CREATE	(Aa)-[:Is_included_in]->(PR2),
 	(Ac)-[:Is_included_in]->(PR2)
 
-CREATE	(Ra)-[:Is_included_in]->(Aa),
-	(Rb)-[:Is_included_in]->(Aa),
-	(Rc)-[:Is_included_in]->(Ac)
+CREATE	(Ra)<-[:Is_included_in]-(Aa),
+	(Rb)<-[:Is_included_in]-(Aa),
+	(Rc)<-[:Is_included_in]-(Ac)
 	
 CREATE	(MT1:Master {Position:'Bulletpoint 1', master_text:'Shaped front and back to fit your curves'}),
 	(MT2:Master {Position:'Bulletpoint 2', master_text:'All-around barrier'}),
