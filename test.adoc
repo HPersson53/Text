@@ -184,7 +184,7 @@ Input from PLM ats Assignment approved, we know assortment and material specs ch
 MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material)--(PCON:PCON)
 RETURN n.Number as SA_no, a.Number as Art_no, a.Brand as brand, a.Size as size, a.Basket as basket, m.Mumber as Mat_no, PCON.Number as PCON
 ----
-//graph_result
+//table
 
 === GDM requests address update.
 exsisting Address text objects are linked to the new articles/artworks??, following sold in list.
