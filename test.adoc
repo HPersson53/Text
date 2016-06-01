@@ -134,8 +134,8 @@ PCON Supplier
 Material no
 [source, cypher]
 ----
-MATCH (n:Activity {Number:'SA3012 Rainbow'})--(a:Article)--(r:Recepie)--(m:Material)--(tt:onpack)
-RETURN a,r,m,tt
+MATCH (n:Activity)--(a:Article)--(r:Recepie)--(m:Material {Number:'3212400'})--(tt:onpack)
+RETURN n,a,r,m,tt
 ----
 //graph_result
 ...
