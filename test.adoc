@@ -55,19 +55,20 @@ CREATE	(Ra)<-[:Is_included_in]-(Aa),
 	(Rb)<-[:Is_included_in]-(Aa),
 	(Rc)<-[:Is_included_in]-(Ac)
 	
-CREATE	(MT1:Master {Position:'Bulletpoint 1', master_text:'Shaped front and back to fit your curves'}),
-	(MT2:Master {Position:'Bulletpoint 2', master_text:'All-around barrier'}),
+CREATE	(MT1:Master {Position:'Bulletpoint 1', master_text:'Anti-leak walls'}),
+	(MT2:Master {Position:'Bulletpoint 2', master_text:'Fast Absorption Core'}),
 	(MT3:Master {Position:'ICON 032', master_text:'Dont flush icon'}),
-	(MT4:Master {Position:'Bulletpoint 2', master_text:'Now enven better SWAT'}),
+	(MT4:Master {Position:'Bulletpoint 2', master_text:'Walls'}),
 	(MT5:Master {Position:'Address', master_text:'Consumer Contact address'})
 
-CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'translation 76sdhksb shfjh', Language:'FR'}),
-	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'translation sdfj sfdh jh s', Language:'FR'}),
+CREATE	(TT1:onpack {Position:'Bulletpoint 1', Translated_text:'Murs anti-fuites', Language:'FR'}),
+	(TT2:onpack {Position:'Bulletpoint 2', Translated_text:'Cœur conçu pour une absorption', Language:'FR'}),
 	(TT3:onpack {Position:'Bulletpoint 1', Translated_text:'translation sfh jhsjhj hjsf', Language:'UK'}),
 	(TT4:onpack {Position:'Bulletpoint 2', Translated_text:'translation dsfsf fsf fss', Language:'UK'}),
 	(TT5:onpack {Position:'Bulletpoint 2', Translated_text:'translation swat', Language:'UK'}),
 	(TT6:onpack {Position:'Address', Translated_text:'UK contact dsjdsj', Language:'UK'}),
-	(TT7:onpack {Position:'Address', Translated_text:'UK contact dsjdsj', Language:'FR'})
+	(TT7:onpack {Position:'Address', Translated_text:'UK contact dsjdsj', Language:'FR'}),
+	(TT8:onpack {Position:'Bulletpoint 2', Translated_text:'Cœur conçu pour une absorption rapide', Language:'FR'})
 	
 CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT2)-[:translation_of]->(MT2),
@@ -75,11 +76,14 @@ CREATE	(TT1)-[:translation_of]->(MT1),
 	(TT4)-[:translation_of]->(MT2),
 	(TT5)-[:translation_of]->(MT4),
 	(TT6)-[:translation_of]->(MT5),
-	(TT7)-[:translation_of]->(MT5)
+	(TT7)-[:translation_of]->(MT5),
+	(TT8)-[:translation_of]->(MT2)
 	
 CREATE 	(MT3)-[:Is_used_in]->(Ma),
 	(MT3)-[:Is_used_in]->(Mb),
 	(MT3)-[:Is_used_in]->(Mc)
+	
+CREATE 	(TT2)-[:Is_replaced_by]->(TT8)
 
 CREATE	(MS1:Master_set {Design_Name:'Rainbow NW', Product_Size:'Normal Wing'}),
 	(MS2:Master_set {Design_Name:'SWAT NW', Product_Size:'Normal Wing'})
